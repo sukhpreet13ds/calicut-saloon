@@ -137,46 +137,43 @@ body {
 
 .calicut-hero-section {
     position: relative;
-
     width: 100%;
     min-height: 100vh;
-
     display: flex;
     align-items: center;
-
     overflow: hidden;
-
     background: #050505;
+    border-left: 2px solid var(--primary-color);
 }
 
 
 /* =========================================
-           BACKGROUND VIDEO
+           BACKGROUND SLIDESHOW
         ========================================= */
 
-.hero-video {
+.hero-slideshow {
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
-    object-fit: cover;
-
     z-index: 0;
+    overflow: hidden;
+}
 
-    /*
-                Video itself is darkened slightly.
-                Change opacity if required.
-            */
-    opacity: 0.88;
-
-    /*
-                Makes the video look slightly cinematic.
-            */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
     filter: brightness(0.72) contrast(1.08) saturate(0.82);
-
     transform: scale(1.04);
+}
+
+.hero-slide.active {
+    opacity: 0.88;
 }
 
 
@@ -391,9 +388,8 @@ body {
 
 .experience-circle {
     position: absolute;
-
     right: 7%;
-    bottom: 48px;
+    bottom: 100px;
     width: 140px;
     height: 140px;
     border: 1px solid rgba(214, 163, 45, 0.85);
@@ -681,6 +677,7 @@ body {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -932,12 +929,11 @@ body {
     line-height: 1.6;
 }
 
-/* =========================================
-           SERVICES SECTION
-        ========================================= */
+/*SERVICES SECTION*/
 .services-section {
     padding: 120px 0;
-    background: var(--black);
+    background: #111111;
+    border-left: 2px solid var(--primary-color);
 }
 
 .services-container {
@@ -1175,6 +1171,719 @@ body {
     transform: translateX(4px);
 }
 
+/* STATS SECTION */
+.calicut-stats-section {
+    background: var(--primary-color);
+    color: var(--black);
+    padding: 42px 42px;
+    position: relative;
+    overflow: hidden;
+}
+
+.stats-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.stat-item {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-number-wrapper {
+    font-family: var(--font-oswald);
+    font-size: 85px;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 8px;
+    letter-spacing: -1px;
+}
+
+.stat-label {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: #3A2A10;
+}
+
+.stat-divider {
+    width: 1px;
+    height: 122px;
+    background: rgba(5, 5, 5, 0.25);
+}
+
+.stat-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 30px;
+}
+
+.stats-bg-icon {
+    font-size: 38px;
+    color: rgba(5, 5, 5, 0.6);
+    transform: rotate(-45deg);
+}
+
+/* =========================================
+           EXPERIENCE SECTION
+   ========================================= */
+.calicut-experience-section {
+    padding: 120px 42px;
+    background: #050505;
+}
+
+.experience-container {
+    max-width: 1700px;
+    margin: 0 auto;
+}
+
+.experience-header {
+    margin-bottom: 50px;
+}
+
+.experience-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.experience-label::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--primary-color);
+}
+
+.experience-title {
+    font-family: "Playfair Display", serif;
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.experience-desc {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: 4.5fr 5.5fr;
+    gap: 20px;
+}
+
+.experience-left {
+    height: 520px;
+    overflow: hidden;
+}
+
+.experience-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.experience-left img:hover {
+    transform: scale(1.03);
+}
+
+.experience-right-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    height: 520px;
+}
+
+.experience-right-item {
+    overflow: hidden;
+}
+
+.experience-right-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.experience-right-item img:hover {
+    transform: scale(1.03);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.92);
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 85%;
+    object-fit: contain;
+    transform: scale(0.9);
+    transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lightbox-modal.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* =========================================
+           REVIEWS SECTION
+   ========================================= */
+.calicut-reviews-section {
+    padding: 120px 42px;
+    background: #0d0d0d;
+    overflow: hidden;
+}
+
+.reviews-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.reviews-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.reviews-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.reviews-label::before,
+.reviews-label::after {
+    content: "";
+    width: 20px;
+    height: 1px;
+    background: var(--primary-color);
+}
+
+.reviews-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 20px;
+}
+
+.reviews-desc {
+    max-width: 950px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Slider Layout */
+.reviews-slider-outer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.reviews-slider-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+.reviews-track {
+    display: flex;
+    width: 100%;
+}
+
+.review-card {
+    flex: 0 0 33.3333%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    background: transparent;
+}
+
+.review-card-inner {
+    background: #ffffff;
+    color: #111111;
+    border-radius: 8px;
+    padding: 35px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.review-card-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.review-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #eaeaea;
+}
+
+.review-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.review-author {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #111111;
+}
+
+.review-stars {
+    color: #f1c40f;
+    font-size: 14px;
+    display: flex;
+    gap: 3px;
+}
+
+.review-card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review-text {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.review-highlight {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+}
+
+/* Nav Buttons */
+.review-nav-btn {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 20px;
+    z-index: 10;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.review-nav-btn:hover {
+    color: var(--primary-color);
+}
+
+.prev-btn {
+    margin-right: -10px;
+}
+
+.next-btn {
+    margin-left: -10px;
+}
+
+/* =========================================
+           CONTACT / FIND US SECTION
+   ========================================= */
+.calicut-contact-section {
+    padding: 120px 42px;
+    background: #050505;
+}
+
+.contact-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 5.5fr 4.5fr;
+    gap: 50px;
+}
+
+.contact-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-label {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 16px;
+    color: var(--primary-color);
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.contact-label::before {
+    content: "";
+    width: 28px;
+    height: 1px;
+    background: var(--primary-color);
+}
+
+.contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: var(--white);
+}
+
+.contact-desc {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 40px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.contact-detail-item {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-detail-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(29, 29, 29, 0.1);
+    border: 1px solid rgba(214, 163, 45, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.contact-detail-info h4 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.contact-detail-info p {
+    font-size: 16px;
+    color: var(--white);
+    line-height: 1.4;
+}
+
+.contact-hours {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 35px;
+}
+
+.hours-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 17px;
+}
+
+.hours-days {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hours-time {
+    color: #8a8686;
+    font-weight: 500;
+}
+
+.contact-right {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.map-wrapper {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-wrapper iframe {
+    display: block;
+}
+
+.book-appointment-card {
+    background: #0d0d0d;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 40px;
+}
+
+.book-appointment-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.book-appointment-card p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 25px;
+}
+
+.appointment-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-whatsapp,
+.btn-call {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.btn-whatsapp {
+    background: #25d366;
+    color: #ffffff;
+}
+
+.btn-whatsapp:hover {
+    background: #20ba59;
+}
+
+.btn-call {
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    background: transparent;
+}
+
+.btn-call:hover {
+    background: var(--primary-color);
+    color: var(--black);
+}
+
+/* =========================================
+           FOOTER SECTION
+   ========================================= */
+.calicut-footer {
+    background: #000000;
+    color: #ffffff;
+    padding: 80px 42px 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo {
+    max-height: 80px;
+    width: auto;
+    align-self: flex-start;
+    margin-bottom: 20px;
+}
+
+.footer-small-hours {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 5px;
+}
+
+.footer-big-hours {
+    font-family: var(--font-oswald);
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--primary-color);
+    margin-top: auto;
+}
+
+.footer-col-title {
+    font-family: var(--font-oswald);
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+
+.footer-address {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.918);
+    margin-bottom: 20px;
+}
+
+.footer-phone {
+    font-family: var(--font-oswald);
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.footer-email {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.slogan-col {
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+.footer-slogan {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: 25px;
+}
+
+/* Footer Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 30px;
+}
+
+.footer-bottom-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.footer-bottom-container p {
+    margin: 0;
+}
+
 /*RESPONSIVE MEDIA QUERIES*/
 
 /* 1. LARGE LAPTOPS */
@@ -1317,15 +2026,15 @@ body {
     .why-section {
         padding: 80px 0;
     }
-    
+
     .why-container {
         padding: 0 24px;
     }
-    
+
     .why-header {
         margin-bottom: 40px;
     }
-    
+
     .why-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
@@ -1334,7 +2043,7 @@ body {
     .services-section {
         padding: 80px 0;
     }
-    
+
     .services-container {
         padding: 0 24px;
     }
@@ -1369,9 +2078,11 @@ body {
         height: 36px;
         font-size: 16px;
     }
-.calicut-hero-section{
-    min-height: auto;
-}
+
+    .calicut-hero-section {
+        min-height: 50vh;
+    }
+
     .hero-content {
         padding: 90px 16px 60px;
     }
@@ -1596,7 +2307,198 @@ body {
         padding: 30px 20px;
         min-height: 280px;
     }
+
     .service-desc {
         font-size: 16px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE DESIGN FOR NEW SECTIONS
+   ========================================= */
+@media (max-width: 768px) {
+
+    /* Stats mobile 2x2 grid */
+    .calicut-stats-section {
+        padding: 40px 20px;
+    }
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 10px;
+    }
+
+    .stat-number-wrapper {
+        font-size: 48px;
+    }
+
+    .stat-label {
+        font-size: 11px;
+        letter-spacing: 0.2px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-icon-wrapper {
+        grid-column: span 2;
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .stats-bg-icon {
+        font-size: 32px;
+    }
+
+    /* Experience section mobile styling */
+    .calicut-experience-section {
+        padding: 60px 16px;
+    }
+
+    .experience-header {
+        margin-bottom: 30px;
+    }
+
+    .experience-title {
+        font-size: 32px;
+    }
+
+    .experience-desc {
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .experience-left {
+        height: 380px;
+    }
+
+    .experience-right-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: 15px;
+        padding-bottom: 15px;
+        height: 240px;
+        scrollbar-width: none;
+    }
+
+    .experience-right-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .experience-right-item {
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+        height: 100%;
+    }
+
+    /* Reviews Section Mobile */
+    .calicut-reviews-section {
+        padding: 60px 16px;
+    }
+
+    .reviews-title {
+        font-size: 32px;
+    }
+
+    .reviews-desc {
+        font-size: 15px;
+    }
+
+    .review-card {
+        flex: 0 0 100%;
+        padding: 0 10px;
+    }
+
+    .review-card-inner {
+        padding: 25px;
+        min-height: auto;
+    }
+
+    .review-nav-btn {
+        padding: 8px;
+        font-size: 18px;
+    }
+
+    /* Contact Section Mobile */
+    .calicut-contact-section {
+        padding: 60px 16px;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .contact-title {
+        font-size: 32px;
+    }
+
+    .contact-desc {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .appointment-buttons {
+        flex-direction: column;
+    }
+
+    /* Footer Mobile Section (2x2 Columns) */
+    .calicut-footer {
+        padding: 50px 16px 20px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 20px;
+        margin-bottom: 40px;
+    }
+
+    .slogan-col {
+        grid-column: span 2;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+        padding-top: 30px;
+    }
+
+    .footer-slogan {
+        text-align: center;
+        max-width: 100%;
+        font-size: 20px;
+    }
+
+    .footer-big-hours {
+        font-size: 28px;
+        margin-top: 15px;
+    }
+
+    .footer-bottom-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .book-appointment-card h3 {
+        font-size: 32px;
+    }
+
+    .btn-whatsapp,
+    .btn-call {
+        font-size: 18px;
+    }
+    .book-appointment-card{
+        padding-left: 20px;
+        padding-right: 20px;
     }
 }

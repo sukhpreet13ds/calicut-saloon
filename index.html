@@ -64,19 +64,17 @@
 
         <section class="calicut-hero-section">
 
-            <!-- BACKGROUND VIDEO -->
-            <video class="hero-video" id="heroVideo" autoplay muted loop playsinline preload="auto">
-                <!-- Replace this with your uploaded video -->
-                <source src="assets/calicut-hero.mp4" type="video/mp4">
-                Your browser does not support HTML5 video.
-            </video>
+            <!-- BACKGROUND SLIDESHOW -->
+            <div class="hero-slideshow">
+                <img src="assets/slide2.jpg" class="hero-slide active" alt="Slide 2">
+                <img src="assets/slide3.jpg" class="hero-slide" alt="Slide 3">
+            </div>
 
 
             <!-- VIDEO DARK OVERLAYS -->
 
-            <div class="video-overlay"></div>
 
-            <div class="left-dark-shade"></div>
+           
 
 
             <!-- GOLD BORDER -->
@@ -88,40 +86,7 @@
             <div class="hero-content">
 
 
-                <div class="hero-label">
-                    Calicut Saloon
-                </div>
-
-
-                <h1 class="hero-title">
-                    Premium Men's &<br>
-                    Kids Grooming<br>
-                    Destination in<br>
-                    Kuwait
-                </h1>
-
-
-                <p class="hero-description">
-
-                    Experience exceptional grooming tailored for gentlemen
-                    and young boys. From stylish haircuts and refined beard
-                    grooming to relaxing facial treatments, every service
-                    is delivered with expertise, care, and attention to
-                    every detail.
-
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a href="https://wa.me/96541181010" target="_blank" class="btn btn-primary">
-                        Book via WhatsApp
-                    </a>
-
-
-                    <a href="#services" class="btn btn-outline">
-                        Explore Services
-                    </a>
+               
 
                 </div>
 
@@ -307,7 +272,7 @@
                                 </div>
                             </div>
                             <div class="service-card">
-                                <div class="service-card-bg" style="background-image: url('assets/service1.jpg');"></div>
+                                <div class="service-card-bg" style="background-image: url('assets/service3.jpg');"></div>
                                 <div class="service-card-overlay"></div>
                                 <div class="service-card-content">
                                     <div class="service-number">02</div>
@@ -479,7 +444,7 @@
                                 </div>
                             </div>
                             <div class="service-card">
-                                <div class="service-card-bg" style="background-image: url('assets/service1.jpg');"></div>
+                                <div class="service-card-bg" style="background-image: url('assets/add1.jpg');"></div>
                                 <div class="service-card-overlay"></div>
                                 <div class="service-card-content">
                                     <div class="service-number">02</div>
@@ -493,7 +458,7 @@
                                 </div>
                             </div>
                             <div class="service-card">
-                                <div class="service-card-bg" style="background-image: url('assets/service1.jpg');"></div>
+                                <div class="service-card-bg" style="background-image: url('assets/add2.jpg');"></div>
                                 <div class="service-card-overlay"></div>
                                 <div class="service-card-content">
                                     <div class="service-number">03</div>
@@ -518,7 +483,359 @@
             </div>
         </section>
 
+
+
+        <section class="calicut-stats-section" id="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">+</span>
+                    </div>
+                    <span class="stat-label">Services Offered</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="100">0</span><span class="stat-suffix">%</span>
+                    </div>
+                    <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="5">0</span>
+                    </div>
+                    <span class="stat-label">Skilled Grooming Expert</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number-wrapper">
+                        <span class="stat-number" data-target="7">0</span>
+                    </div>
+                    <span class="stat-label">Days a Week</span>
+                </div>
+                <div class="stat-icon-wrapper">
+                    <i class="fa-solid fa-scissors stats-bg-icon"></i>
+                </div>
+            </div>
+        </section>
+
+        <section class="calicut-experience-section" id="experience">
+            <div class="experience-container">
+                <div class="experience-header">
+                    <div class="experience-label">The Experience</div>
+                    <h2 class="experience-title">Experience the Calicut Difference</h2>
+                    <p class="experience-desc">Every visit is designed to deliver outstanding service, exceptional cleanliness, and personalized attention in an environment where quality and customer satisfaction always come first.</p>
+                </div>
+                
+                <div class="experience-grid">
+                    <div class="experience-left">
+                        <img src="assets/experience-left.png" alt="Experience Left" class="pop-image">
+                    </div>
+                    <div class="experience-right-grid">
+                        <div class="experience-right-item">
+                            <img src="assets/experience1.png" alt="Experience 1" class="pop-image">
+                        </div>
+                        <div class="experience-right-item">
+                            <img src="assets/experience2.png" alt="Experience 2" class="pop-image">
+                        </div>
+                        <div class="experience-right-item">
+                            <img src="assets/experience3.png" alt="Experience 3" class="pop-image">
+                        </div>
+                        <div class="experience-right-item">
+                            <img src="assets/experience4.png" alt="Experience 4" class="pop-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- LIGHTBOX MODAL FOR POP OUT -->
+        <div class="lightbox-modal" id="lightboxModal">
+            <span class="lightbox-close" id="lightboxClose">&times;</span>
+            <img class="lightbox-content" id="lightboxImg" alt="Enlarged View">
+        </div>
+
+        <section class="calicut-reviews-section" id="reviews">
+            <div class="reviews-container">
+                <div class="reviews-header">
+                    <div class="reviews-label">Google Reviews</div>
+                    <h2 class="reviews-title">Trusted by Our Customers</h2>
+                    <p class="reviews-desc">Customer satisfaction is at the heart of everything we do. We are proud to deliver consistent quality and memorable grooming experiences that keep our customers coming back.</p>
+                </div>
+                
+                <div class="reviews-slider-outer">
+                    <button class="review-nav-btn prev-btn" id="prevReviewBtn" aria-label="Previous review">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="reviews-slider-container">
+                        <div class="reviews-track" id="reviewsTrack">
+                            <!-- Card 1 -->
+                            <div class="review-card">
+                                <div class="review-card-inner">
+                                    <div class="review-card-header">
+                                        <div class="review-avatar">
+                                            <img src="assets/user1.avif" alt="S. Akhter">
+                                        </div>
+                                        <div class="review-meta">
+                                            <h3 class="review-author">S. Akhter</h3>
+                                            <div class="review-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-card-body">
+                                        <p class="review-text">Tried this salon today and was not disappointed. I Had an amazing facial with great professionalism and care.</p>
+                                        <h4 class="review-highlight">Definitely will recommend.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div class="review-card">
+                                <div class="review-card-inner">
+                                    <div class="review-card-header">
+                                        <div class="review-avatar">
+                                            <img src="assets/user2.avif" alt="NG Gamers">
+                                        </div>
+                                        <div class="review-meta">
+                                            <h3 class="review-author">NG Gamers</h3>
+                                            <div class="review-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-card-body">
+                                        <p class="review-text">Absolutely loved my visit! 👑 The best unisex salon for haircut, grooming, and skincare services. The team really knows how to bring out your best look! 💖</p>
+                                        <h4 class="review-highlight">Definitely will recommend.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 3 -->
+                            <div class="review-card">
+                                <div class="review-card-inner">
+                                    <div class="review-card-header">
+                                        <div class="review-avatar">
+                                            <img src="assets/user3.jpg" alt="Yoganathan Moodley">
+                                        </div>
+                                        <div class="review-meta">
+                                            <h3 class="review-author">Yoganathan Moodley</h3>
+                                            <div class="review-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-card-body">
+                                        <p class="review-text">Thanks Ali. Had my first facial. A pleasant experience and will definitely be back. Nice clean place. Very professional service. All also advised me on the current specials. They are also open 8 to 8pm so convenient after work as well.</p>
+                                        <h4 class="review-highlight">Definitely will recommend.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div class="review-card">
+                                <div class="review-card-inner">
+                                    <div class="review-card-header">
+                                        <div class="review-avatar">
+                                            <img src="assets/user4.avif" alt="Mohammed F.">
+                                        </div>
+                                        <div class="review-meta">
+                                            <h3 class="review-author">Mohammed F.</h3>
+                                            <div class="review-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-card-body">
+                                        <p class="review-text">Great service! The staff is friendly, the place is hygienic, and the haircuts are precise. Highly recommended for kids as well.</p>
+                                        <h4 class="review-highlight">Definitely will recommend.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 5 -->
+                            <div class="review-card">
+                                <div class="review-card-inner">
+                                    <div class="review-card-header">
+                                        <div class="review-avatar">
+                                            <img src="assets/user5.webp" alt="Rashed A.">
+                                        </div>
+                                        <div class="review-meta">
+                                            <h3 class="review-author">Rashed A.</h3>
+                                            <div class="review-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-card-body">
+                                        <p class="review-text">Been coming here for months now. The quality of hair styling and beard detailing is top notch. Best in Kuwait!</p>
+                                        <h4 class="review-highlight">Definitely will recommend.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 6 -->
+                            <div class="review-card">
+                                <div class="review-card-inner">
+                                    <div class="review-card-header">
+                                        <div class="review-avatar">
+                                            <img src="assets/user6.webp" alt="John D.">
+                                        </div>
+                                        <div class="review-meta">
+                                            <h3 class="review-author">John D.</h3>
+                                            <div class="review-stars">
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                                <i class="fa-solid fa-star"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="review-card-body">
+                                        <p class="review-text">Excellent kids haircut. They were very patient and made the child comfortable. Will definitely visit again.</p>
+                                        <h4 class="review-highlight">Definitely will recommend.</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="review-nav-btn next-btn" id="nextReviewBtn" aria-label="Next review">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="calicut-contact-section" id="contact">
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="contact-label">Find Us</div>
+                    <h2 class="contact-title">Visit Calicut Saloon</h2>
+                    <p class="contact-desc">Conveniently located in Mangaf and Salmiya, Kuwait, Calicut Saloon welcomes you to experience premium grooming in a modern, comfortable, and friendly environment. Whether you're visiting for a quick refresh or a complete style transformation, our team is ready to provide outstanding service with care and professionalism.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                               <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="contact-detail-info">
+                                <h4>Address</h4>
+                                <p>Mangaf Block 4, Street No.17, Building No.48, Near Pakistan School, Kuwait</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="contact-detail-info">
+                                <h4>Mobile / WhatsApp</h4>
+                                <p>+965 4118 1010</p>
+                            </div>
+                        </div>
+                        <div class="contact-detail-item">
+                            <div class="contact-detail-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail-info">
+                                <h4>Email</h4>
+                                <p>calicutsaloonkwt@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-hours">
+                        <h4 class="hours-title">Opening Hours</h4>
+                        <div class="hours-row">
+                            <span class="hours-days">Saturday – Thursday</span>
+                            <span class="hours-time">8:00 AM – 11:00 PM</span>
+                        </div>
+                        <div class="hours-row">
+                            <span class="hours-days">Friday</span>
+                            <span class="hours-time">8:00 AM – 11:00 PM</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-right">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4498.4473489300835!2d48.125531576298265!3d29.100271962685195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf07de5b513d3b%3A0x4eac7bc54c98b6cc!2sCalicut%20Saloon!5e1!3m2!1sen!2sin!4v1786705706247!5m2!1sen!2sin" width="100%" height="320" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    
+                    <div class="book-appointment-card">
+                        <h3>Book Your Appointment Today</h3>
+                        <p>Booking your next grooming session is quick and convenient. Contact us through WhatsApp or give us a call to reserve your preferred time. Walk-ins are also welcome, subject to availability.</p>
+                        <div class="appointment-buttons">
+                            <a href="https://wa.me/96541181010" target="_blank" class="btn-whatsapp">
+                                <i class="fa-brands fa-whatsapp"></i> Book via WhatsApp
+                            </a>
+                            <a href="tel:+96541181010" class="btn-call">
+                                <i class="fa-solid fa-phone"></i> Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer class="calicut-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <img src="assets/calicut-footer.png" alt="Calicut Saloon" class="footer-logo">
+                <p class="footer-small-hours">8:00 AM – 11:00 PM</p>
+                <div class="footer-big-hours">8:00 AM – 11:00 PM</div>
+            </div>
+            
+            <div class="footer-col services-col">
+                <h4 class="footer-col-title">Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#services">Haircut</a></li>
+                    <li><a href="#services">Beard Grooming</a></li>
+                    <li><a href="#services">Classic Shave</a></li>
+                    <li><a href="#services">Kids Haircut</a></li>
+                    <li><a href="#services">Hair Color</a></li>
+                    <li><a href="#services">Facial Treatment</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col contact-col">
+                <h4 class="footer-col-title">Contact</h4>
+                <p class="footer-address">Mangaf Block 4, Street No.17, Building No.48, Near Pakistan School, Kuwait</p>
+                <p class="footer-phone">+965 4118 1010</p>
+                <p class="footer-email">calicutsaloonkwt@gmail.com</p>
+            </div>
+            
+          
+        </div>
+          <div class="slogan-col">
+                <p class="footer-slogan">Premium Grooming. Exceptional Service. Lasting Confidence.</p>
+            </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <p class="footer-copyright">&copy; 2026 Calicut Saloon. All rights reserved.</p>
+                <p class="footer-location">Mangaf, Kuwait - Premium Men's Grooming</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- SIDEBAR MENU -->
     <div class="sidebar" id="sidebar">
