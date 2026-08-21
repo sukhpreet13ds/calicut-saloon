@@ -60,10 +60,6 @@
                         </div>
                         <div class="checkout-summary-totals">
                             <div class="total-row">
-                                <span>Subtotal</span>
-                                <span class="subtotal-val">0.000 KWD</span>
-                            </div>
-                            <div class="total-row">
                                 <span>Est. Duration</span>
                                 <span class="duration-val">0 Min</span>
                             </div>
@@ -168,7 +164,6 @@
 
                     if (cart.length === 0) {
                         summaryItemsContainer.innerHTML = `<p class="empty-cart-msg">No services selected.</p>`;
-                        subtotalVal.textContent = "0.000 KWD";
                         durationVal.textContent = "0 Min";
                         return;
                     }
@@ -185,14 +180,10 @@
                             <h4>${item.name}</h4>
                             <p>${item.duration}</p>
                         </div>
-                        <div class="summary-item-price">
-                            ${item.price.toFixed(3)} KWD
-                        </div>
                     `;
                         summaryItemsContainer.appendChild(itemDiv);
                     });
 
-                    subtotalVal.textContent = total.toFixed(3) + " KWD";
                     durationVal.textContent = totalDuration + " Min";
                 }
 

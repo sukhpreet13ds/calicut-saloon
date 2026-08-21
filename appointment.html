@@ -127,7 +127,7 @@
                         itemDiv.innerHTML = `
                         <div class="cart-item-details">
                             <h4>${item.name}</h4>
-                            <p>${item.duration} &nbsp;•&nbsp; ${item.price.toFixed(3)} KWD</p>
+                            <p>${item.duration} &nbsp;</p>
                         </div>
                         <button class="remove-cart-item-btn" onclick="removeFromCart(${item.id})">×</button>
                     `;
@@ -183,7 +183,6 @@
                                 <p>${service.duration}</p>
                             </div>
                             <div class="service-actions">
-                                <span class="price">${service.price.toFixed(3)} KWD</span>
                                 <button class="add-btn ${isAdded ? 'added' : ''}" onclick="toggleService(${service.id}, this)">
                                     ${isAdded ? 'ADDED' : '+ ADD'}
                                 </button>
