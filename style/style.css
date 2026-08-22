@@ -137,7 +137,7 @@ body {
 .calicut-hero-section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 105vh;
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -167,100 +167,24 @@ body {
     object-fit: cover;
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
-    filter: brightness(0.72) contrast(1.08) saturate(0.82);
+    /* filter: brightness(0.72) contrast(1.08) saturate(0.82); */
     transform: scale(1.04);
 }
 
 .hero-slide.active {
-    opacity: 0.88;
+    opacity:1;
 }
 
-
-/* =========================================
-           VIDEO OVERLAYS
-        ========================================= */
-
-/*
-            Overall dark overlay
-        */
-
-.video-overlay {
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-
-    background:
-        linear-gradient(90deg,
-            rgba(0, 0, 0, 0.97) 0%,
-            rgba(0, 0, 0, 0.91) 24%,
-            rgba(0, 0, 0, 0.67) 44%,
-            rgba(0, 0, 0, 0.20) 68%,
-            rgba(0, 0, 0, 0.30) 100%);
-}
-
-
-/*
-            Additional dark shade specifically
-            on the left side.
-        */
-
-.left-dark-shade {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 63%;
-    height: 100%;
-
-    z-index: 2;
-
-    background:
-        linear-gradient(90deg,
-            rgba(0, 0, 0, 0.95) 0%,
-            rgba(0, 0, 0, 0.70) 50%,
-            rgba(0, 0, 0, 0) 100%);
-
-    pointer-events: none;
-}
-
-
-
-
-
-/* =========================================
-           GOLD LEFT BORDER
-        ========================================= */
+/*GOLD LEFT BORDER*/
 
 .gold-border {
     position: absolute;
-
     top: 55px;
     bottom: 0;
     left: 0;
-
     width: 2px;
-
     z-index: 10;
-
     background: var(--primary-color);
-}
-
-
-/* =========================================
-           HERO CONTENT
-        ========================================= */
-
-.hero-content {
-    position: relative;
-
-    z-index: 10;
-
-    width: 100%;
-    max-width: 1700px;
-
-    margin: 0 auto;
-
-    padding: 110px 42px 80px;
 }
 
 
@@ -270,14 +194,10 @@ body {
     display: flex;
     align-items: center;
     gap: 7px;
-
     margin-bottom: 16px;
-
     color: var(--primary-color);
-
     font-size: 15px;
     font-weight: 500;
-
     text-transform: uppercase;
 }
 
@@ -293,21 +213,13 @@ body {
 
 .hero-title {
     max-width: 1010px;
-
     font-family: var(--font-oswald);
-
     font-size: clamp(48px, 6vw, 120px);
-
     font-weight: 600;
-
     line-height: 0.99;
-
     letter-spacing: -1.5px;
-
     text-transform: none;
-
     color: #fff;
-
     margin-bottom: 19px;
 }
 
@@ -327,14 +239,23 @@ body {
 }
 
 
-/* =========================================
-           BUTTONS
-        ========================================= */
-
 .hero-buttons {
     display: flex;
     align-items: center;
     gap: 10px;
+}
+.gold-border {
+    position: absolute;
+
+    top: 55px;
+    bottom: 0;
+    left: 0;
+
+    width: 2px;
+
+    z-index: 10;
+
+    background: var(--primary-color);
 }
 
 .btn {
@@ -639,9 +560,7 @@ body {
            SEAMLESS MARQUEE
         ========================================= */
 .seamless-marquee {
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    position: relative;
     width: 100%;
     background: var(--primary-color);
     border: none;
@@ -649,6 +568,7 @@ body {
     overflow: hidden;
     z-index: 15;
     white-space: nowrap;
+
 }
 
 .marquee-track {
@@ -1833,7 +1753,7 @@ body {
     font-size: 15px;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.918);
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 .footer-phone {
@@ -4103,4 +4023,30 @@ body {
         flex-direction: column;
         gap: 15px;
     }
+}
+
+/* FLOATING WHATSAPP BUTTON */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #fff;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 34px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    background-color: #20ba59;
+    transform: scale(1.1);
 }

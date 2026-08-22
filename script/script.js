@@ -224,4 +224,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
         updateSlider(false);
     }
+
+    // Floating WhatsApp Button
+    const whatsappButton = document.createElement("a");
+    whatsappButton.href = "https://wa.me/96541181010";
+    whatsappButton.target = "_blank";
+    whatsappButton.className = "whatsapp-float";
+    whatsappButton.innerHTML = '<i class="fa-brands fa-whatsapp"></i>';
+    document.body.appendChild(whatsappButton);
 }});
