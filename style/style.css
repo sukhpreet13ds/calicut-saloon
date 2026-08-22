@@ -25,7 +25,19 @@ body {
     font-family: var(--font-inter);
     overflow-x: hidden;
 }
-
+::-webkit-scrollbar {
+    width: 3.5px;
+}
+::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
 /*NAVBAR*/
 
 .navbar {
